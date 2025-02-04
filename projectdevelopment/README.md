@@ -75,10 +75,17 @@
 
 # High level solution diagram
 
-![stakeholder analysis matrix](./assets/highLevelSolutionDiagram.png)
+![high level solution diagram](./assets/highLevelSolutionDiagram.png)
 
 # Database schema diagram
 
-![stakeholder analysis matrix](./assets/databaseDiagram.png)
+![database schema diagram](./assets/updatedDbDiagram.png)
 
-# Wireframes
+# Wireframe
+
+![landing page](./assets/landingPage.png)
+![registration page](./assets/registrationPage.png)
+![login page](./assets/loginPage.png)
+![questions page](./assets/questionsPage.png)
+![back to clues page](./assets/backToClues.png)
+![mistery solved page](./assets/misterySolved.png)
