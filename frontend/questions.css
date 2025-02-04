@@ -62,5 +62,35 @@ body {
     justify-content: space-between;
     flex-direction: row;
     color: #FFF;
-
 }
+
+#clue-btn {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    width: 10vw;
+    height: 5vh;
+    font-size: 15px;
+    margin-left:30vw;
+}
+
+#questions-section, h1, #answers-section h2{
+    color: white;
+}
+
+#question {
+    color: #1D4E89;
+    font-weight: bold;
+    padding: 3vh 3vw;
+}
+
+label, input {
+    color: #1D4E89;
+    font-weight: bold;
+    padding: 3vh 3vw;
+}
+
+a, button {
+    cursor: pointer;
+}
+
