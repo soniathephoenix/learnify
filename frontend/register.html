@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " id="navbar">
         <div class="container">
           <a class="navbar-brand" href="frontPage.html">Learnify</a>
           <div class="navbar-collapse">
@@ -22,11 +22,17 @@
         </div>
     </nav>
 
-    <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="empty-space">
+        
+    </div>
+
+    <div class="container-fluid d-flex align-items-center justify-content-center" id="frontPageDiv" style="height: 100vh;">
         <div class="w-25">
-            <h1 class="mb-3 mt-5 text-center">Register your Learnify Account!</h1>
+            <div id="textContainer" class="text-center">
+            <h1 class="mb-3 mt-5 text-center" id="heading1">Register your Learnify Account!</h1>
             <form id="register-form">
                 <div class="form-group">
+                    
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Enter first name">
                 </div>
@@ -50,6 +56,7 @@
                     <button id="registerBtn" type="submit" class="btn btn-primary">Register</button>
                 </div>
             </form>
+        </div>
         </div>
     </div>
 </body>
