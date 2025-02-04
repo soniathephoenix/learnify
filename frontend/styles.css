@@ -19,13 +19,14 @@ body {
     padding: 75px;
 }
 
+
 #textContainer {
     background-color: rgba(47, 53, 53, 0.712);
     padding: 10px;
     border-radius: 15px;
 }
 
-
-
- 
-
+.navbar-brand{ 
+    /* styling for Learnify in navbar */
+    font-weight: 500;
+}
