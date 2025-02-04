@@ -20,7 +20,7 @@ document.getElementById("login-form").addEventListener("submit", async (e) => {
 
     if (response.ok) {
         localStorage.setItem("token", data.token);
-        window.location.assign("board.html");
+        window.location.assign("questions.html");
     } else {
         alert(data.error);
     }
