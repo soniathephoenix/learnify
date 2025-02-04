@@ -78,6 +78,10 @@ body {
     color: white;
 }
 
+#question-container, #answer-container {
+    border-radius: 5px;
+}
+
 #question {
     color: #1D4E89;
     font-weight: bold;
@@ -93,4 +97,3 @@ label, input {
 a, button {
     cursor: pointer;
 }
-
