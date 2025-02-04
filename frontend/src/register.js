@@ -3,6 +3,7 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
 
     const form = new FormData(e.target);
 
+    
     const options = {
         method: "POST",
         headers: {
@@ -10,11 +11,11 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-           // firstName: form.get("firstName"),
-           // secondName: form.get("secondName"),
             username: form.get("username"),
-            //email: form.get("email"),
-            password: form.get("password")
+            password: form.get("password"),
+            name: form.get("name"),
+            surname: form.get("surname"),
+            email: form.get("email")
         })
     };
 
@@ -26,4 +27,8 @@ document.getElementById("register-form").addEventListener("submit", async (e) =>
     } else {
         alert(data.error);
     }
+
+
+
+    
 });
