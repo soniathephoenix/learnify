@@ -76,12 +76,14 @@
    #question-container {
      background-color: #7DCFB6;
      color: white;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
    
    #answer-container {
      display: flex;
      flex-direction: column;
      background-color: #FBD1A2;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
    
    
@@ -99,6 +101,7 @@
      height: 5vh;
      font-size: 17px;
      margin-left: 30vw;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
    
    #mistery-submit {
@@ -108,7 +111,7 @@
      color: white;
      cursor: pointer;
      font-size: 15px;
-     
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
    
    #next {
@@ -157,8 +160,17 @@
      border: none;
      border-radius: 5px;
      font-size: 1rem;
+     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
    }
+
+   #clue-image {
+    margin-top: 3vh;
+  }
    
+  .clue-img {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
    
    /* ==========================================================================
       Additional Sections
@@ -207,6 +219,7 @@
      font-family: "Pacifico", serif;
      font-weight: 400;
      font-style: normal;
+     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
 
    .delius-regular {
@@ -218,3 +231,4 @@
    #level h1 {
     color: white;
   }
+
