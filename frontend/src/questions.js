@@ -22,7 +22,7 @@ async function fetchQuestion() {
     
     try {
         const token = localStorage.getItem("token");
-        if (!token) return console.error("No token found");
+        if (!token) return console.log("No token found");
 
         const response = await fetch("https://learnifybackend-wvnw.onrender.com/users/currentq/", {
             headers: { authorization: token }
@@ -40,7 +40,7 @@ async function fetchQuestion() {
             startTimer();
         }
     } catch (err) {
-        console.error("Error fetching question:", err);
+        console.log(err);
         questionP.textContent = "fail to load";
     }
 
@@ -113,9 +113,9 @@ async function updatePoints() {
             const updatedData = await response.json();
             console.log("Points updated:", updatedData);
         } else {
-            console.error("Failed to update points.");
+            console.log("error");
         }
-    } catch (error) {
-        console.error("Error updating points:", error);
+    } catch (e) {
+        console.log(e);
     }
 }
