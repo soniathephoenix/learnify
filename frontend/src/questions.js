@@ -17,31 +17,38 @@ document.addEventListener("DOMContentLoaded", fetchQuestion);
 nextButton.addEventListener("click", handleNext);
 
 async function fetchQuestion() {
-    if (isProcessing) return; 
-    isProcessing = true; 
-    
+    if (isProcessing) return;
+    isProcessing = true;
+
     try {
         const token = localStorage.getItem("token");
-        if (!token) return console.log("No token found");
+        if (!token) {
+            console.log("No token found");
+            return;
+        }
 
         const response = await fetch("https://learnifybackend-wvnw.onrender.com/users/currentq/", {
             headers: { authorization: token }
         });
 
-        if (!response.ok) throw new Error("no question fetch");
+        if (!response.ok) throw new Error("No question fetched");
 
         const data = await response.json();
-        if (!data.question) {
-            window.location.href = 'mystery.html';  
-        } else {
-            questionP.textContent = data.question;
-            correctAnswer = data.correct_answer;
-            loadAnswers(data);
-            startTimer();
+
+        if (!data || Object.keys(data).length === 0) {  
+            console.log("No more questions left. Redirecting to mystery.html...");
+            await resetPoints(); // Reset points for the next round
+            window.location.href = 'mystery.html';  // Redirect
+            return;
         }
+
+        questionP.textContent = data.question;
+        correctAnswer = data.correct_answer;
+        loadAnswers(data);
+        startTimer();
     } catch (err) {
         console.log(err);
-        questionP.textContent = "fail to load";
+        questionP.textContent = "Failed to load";
     }
 
     isProcessing = false;
@@ -65,6 +72,7 @@ function startTimer() {
         timer.textContent = time;
         if (time <= 0) {
             clearInterval(timerInterval);
+            alert(`Time's up! The correct answer is: ${correctAnswer}`); // Show correct answer
             handleNext();  
         }
     }, 1000);
@@ -115,6 +123,25 @@ async function updatePoints() {
         } else {
             console.log("error");
         }
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+async function resetPoints() {
+    try {
+        console.log("Resetting points...");
+        const token = localStorage.getItem("token");
+        if (!token) return console.log("No token found.");
+
+        await fetch('https://learnifybackend-wvnw.onrender.com/users/reset-points', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem("token")
+            },
+            body: JSON.stringify({ login_id: localStorage.getItem('login_id') })
+        });
     } catch (e) {
         console.log(e);
     }
