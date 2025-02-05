@@ -17,22 +17,22 @@ document.addEventListener("DOMContentLoaded", fetchQuestion);
 nextButton.addEventListener("click", handleNext);
 
 async function fetchQuestion() {
-    if (isProcessing) return;  // Prevent multiple fetches at once
-    isProcessing = true; // Set processing flag
+    if (isProcessing) return; 
+    isProcessing = true; 
     
     try {
         const token = localStorage.getItem("token");
-        if (!token) return console.error("No token found, user must log in first.");
+        if (!token) return console.error("No token found");
 
         const response = await fetch("https://learnifybackend-wvnw.onrender.com/users/currentq/", {
             headers: { authorization: token }
         });
 
-        if (!response.ok) throw new Error("Failed to fetch question");
+        if (!response.ok) throw new Error("no question fetch");
 
         const data = await response.json();
         if (!data.question) {
-            window.location.href = 'mystery.html';  // Redirect if no question available
+            window.location.href = 'mystery.html';  
         } else {
             questionP.textContent = data.question;
             correctAnswer = data.correct_answer;
@@ -41,10 +41,10 @@ async function fetchQuestion() {
         }
     } catch (err) {
         console.error("Error fetching question:", err);
-        questionP.textContent = "Failed to load question!";
+        questionP.textContent = "fail to load";
     }
 
-    isProcessing = false; // Reset processing flag after operation
+    isProcessing = false;
 }
 
 function loadAnswers(data) {
@@ -65,15 +65,15 @@ function startTimer() {
         timer.textContent = time;
         if (time <= 0) {
             clearInterval(timerInterval);
-            handleNext();  // Automatically move to next when timer ends
+            handleNext();  
         }
     }, 1000);
 }
 
 async function handleNext() {
-    if (isProcessing) return;  // Prevent multiple next clicks
+    if (isProcessing) return;  
 
-    const selectedOption = document.querySelector('input[name="question"]:checked');  // Get selected answer
+    const selectedOption = document.querySelector('input[name="question"]:checked');  
     if (!selectedOption) {
         console.log("No selection");
         return;
@@ -81,7 +81,7 @@ async function handleNext() {
 
     selectedAnswer = selectedOption.value;
     console.log("Clicked on:", selectedAnswer);
-    console.log("Right answer:", correctAnswer);
+    console.log("Right answ:", correctAnswer);
 
     if (selectedAnswer === correctAnswer) {
         await updatePoints();  
@@ -90,7 +90,7 @@ async function handleNext() {
         alert(`The correct answer is: ${correctAnswer}`);  // Show the correct answer if wrong
     }
 
-    fetchQuestion();  // Fetch next question
+    fetchQuestion();  
 }
 
 async function updatePoints() {
@@ -98,13 +98,13 @@ async function updatePoints() {
         console.log("Wait to update points");
 
         const token = localStorage.getItem("token");
-        if (!token) return console.error("No token found, user must log in first.");
+        if (!token) return console.error("No token found.");
 
         const response = await fetch('https://learnifybackend-wvnw.onrender.com/users/update-points', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token  // Send token in the Authorization header
+                'Authorization': token  
             },
             body: JSON.stringify({ login_id: localStorage.getItem('login_id') })
         });
