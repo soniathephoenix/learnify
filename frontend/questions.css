@@ -19,6 +19,14 @@ body {
     align-items: center;
 }
 
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
 
 #question-container {
     background-color: #7DCFB6;

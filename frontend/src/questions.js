@@ -1,18 +1,59 @@
-const questionP = document.getElementById('question')
-const answerContainer = document.getElementById('answer-container')
+const questionP = document.querySelector("#question");
+const answerContainer = document.querySelector("#answer-container");
+const questionSection = document.querySelector("#question-and-answer");
 
-fetch(`https://learnifybackend-wvnw.onrender.com/users/currentq/`, {
-    headers: {
-        authorization: localStorage.getItem("token")
+const timer = document.createElement("div");
+timer.id = "timer";
+timer.textContent = "10";
+document.body.insertBefore(timer, questionSection);
+
+let time = 10;
+let timerInterval;
+
+document.addEventListener("DOMContentLoaded", fetchQuestion);
+
+async function fetchQuestion() {
+    try {
+        console.log("Fetching question...");
+        const response = await fetch("https://learnifybackend-wvnw.onrender.com/users/currentq/", {
+            headers: { authorization: localStorage.getItem("token") }
+        });
+
+        if (!response.ok) throw new Error("Failed to fetch question");
+
+        const data = await response.json();
+
+        console.log("Fetched question data:", data);
+
+        if (!data.question) {
+            window.location.href = 'mystery.html';
+        } else {
+            questionP.textContent = data.question;
+
+            const options = ["a", "b", "c", "d"];
+            options.forEach((option, index) => {
+                answerContainer.children[index].innerHTML = `<input type="radio" name="question" value="${option}"> ${data["option_" + option]}`;
+            });
+
+            startTimer();
+        }
+    } catch (error) {
+        console.error("Error fetching question:", error);
+        questionP.textContent = "Failed to load question!";
     }
-})
-.then((data) => data.json())
-.then((response) => {
+}
 
-    questionP.innerHTML = response.question
+function startTimer() {
+    clearInterval(timerInterval);
+    time = 10;
+    timer.textContent = time;
 
-    answerContainer.children[0].innerHTML = answerContainer.children[0].innerHTML + response.option_a
-    answerContainer.children[1].innerHTML = answerContainer.children[1].innerHTML + response.option_b
-    answerContainer.children[2].innerHTML = answerContainer.children[2].innerHTML + response.option_c
-    answerContainer.children[3].innerHTML = answerContainer.children[3].innerHTML + response.option_d
-})
+    timerInterval = setInterval(() => {
+        time--;
+        timer.textContent = time;
+        if (time <= 0) {
+            clearInterval(timerInterval);
+            fetchQuestion(); 
+        }
+    }, 1000);
+}
