@@ -4,10 +4,10 @@ const nextButton = document.querySelector("#next");
 
 const timer = document.createElement("div");
 timer.id = "timer";
-timer.textContent = "10";
+timer.textContent = "30";
 document.body.insertBefore(timer, document.querySelector("#buttons-section"));
 
-let time = 10;
+let time = 30;
 let timerInterval;
 let correctAnswer = '';  
 let selectedAnswer = '';
@@ -63,7 +63,7 @@ function loadAnswers(data) {
 }
 
 function startTimer() {
-    time = 10;
+    time = 30;
     timer.textContent = time;
     clearInterval(timerInterval);
 
