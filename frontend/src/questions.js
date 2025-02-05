@@ -98,7 +98,7 @@ async function updatePoints() {
         console.log("Wait to update points");
 
         const token = localStorage.getItem("token");
-        if (!token) return console.error("No token found.");
+        if (!token) return console.log("No token found.");
 
         const response = await fetch('https://learnifybackend-wvnw.onrender.com/users/update-points', {
             method: 'POST',
