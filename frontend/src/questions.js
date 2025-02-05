@@ -17,8 +17,8 @@ document.addEventListener("DOMContentLoaded", fetchQuestion);
 nextButton.addEventListener("click", handleNext);
 
 async function fetchQuestion() {
-    if (isProcessing) return; 
-    isProcessing = true;
+    if (isProcessing) return;  // Prevent multiple fetches at once
+    isProcessing = true; // Set processing flag
     
     try {
         const token = localStorage.getItem("token");
@@ -32,7 +32,7 @@ async function fetchQuestion() {
 
         const data = await response.json();
         if (!data.question) {
-            window.location.href = 'mystery.html';  
+            window.location.href = 'mystery.html';  // Redirect if no question available
         } else {
             questionP.textContent = data.question;
             correctAnswer = data.correct_answer;
@@ -40,11 +40,11 @@ async function fetchQuestion() {
             startTimer();
         }
     } catch (err) {
-        console.error(error, err);
+        console.error("Error fetching question:", err);
         questionP.textContent = "Failed to load question!";
-    } finally {
-        isProcessing = false;
     }
+
+    isProcessing = false; // Reset processing flag after operation
 }
 
 function loadAnswers(data) {
@@ -65,38 +65,38 @@ function startTimer() {
         timer.textContent = time;
         if (time <= 0) {
             clearInterval(timerInterval);
-            handleNext(); 
+            handleNext();  // Automatically move to next when timer ends
         }
     }, 1000);
 }
 
 async function handleNext() {
-    if (isProcessing) return;  
+    if (isProcessing) return;  // Prevent multiple next clicks
 
-    const selectedOption = document.querySelector('input[name="question"]:checked');//getting selected ans
+    const selectedOption = document.querySelector('input[name="question"]:checked');  // Get selected answer
     if (!selectedOption) {
         console.log("No selection");
         return;
     }
 
     selectedAnswer = selectedOption.value;
-    console.log("clicked on ", selectedAnswer);
-    console.log("right ans ", correctAnswer);
+    console.log("Clicked on:", selectedAnswer);
+    console.log("Right answer:", correctAnswer);
 
     if (selectedAnswer === correctAnswer) {
         await updatePoints();  
     } else {
         console.log(`Incorrect answer selected. Correct answer was: ${correctAnswer}`);
-        alert(`The correct answer is: ${correctAnswer}`); 
+        alert(`The correct answer is: ${correctAnswer}`);  // Show the correct answer if wrong
     }
 
-    fetchQuestion(); 
+    fetchQuestion();  // Fetch next question
 }
 
 async function updatePoints() {
     try {
-        console.log("wait to update points");
-        
+        console.log("Wait to update points");
+
         const token = localStorage.getItem("token");
         if (!token) return console.error("No token found, user must log in first.");
 
@@ -104,7 +104,7 @@ async function updatePoints() {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': token 
+                'Authorization': token  // Send token in the Authorization header
             },
             body: JSON.stringify({ login_id: localStorage.getItem('login_id') })
         });
