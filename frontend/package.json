@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server",
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./__tests__/helpers.js"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^26.0.0"
+  }
+}
