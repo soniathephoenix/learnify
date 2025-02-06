@@ -38,6 +38,10 @@
    .empty-space {
      padding: 75px;
    }
+
+   .navbar-brand {
+    color: white !important;
+  }
    
    /* ==========================================================================
       Layout / Component Styles
@@ -115,3 +119,4 @@
     left: 0;
     font-size: 0.8rem;
 }
+
