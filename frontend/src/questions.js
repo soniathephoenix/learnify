@@ -1,6 +1,8 @@
 const questionP = document.querySelector("#question");
 const answerContainer = document.querySelector("#answer-container");
 const nextButton = document.querySelector("#next");
+const imageTag = document.getElementById("clue-image")
+const clueBtn = document.getElementById('clue-btn')
 
 const timer = document.createElement("div");
 timer.id = "timer";
@@ -15,6 +17,7 @@ let isProcessing = false;
 
 document.addEventListener("DOMContentLoaded", fetchQuestion);
 nextButton.addEventListener("click", handleNext);
+clueBtn.addEventListener('click', displayImageTag);
 
 async function fetchQuestion() {
     if (isProcessing) return;
@@ -45,6 +48,7 @@ async function fetchQuestion() {
         questionP.textContent = data.question;
         correctAnswer = data.correct_answer;
         loadAnswers(data);
+        loadImages(data.clue)
         startTimer();
     } catch (err) {
         console.log(err);
@@ -60,6 +64,11 @@ function loadAnswers(data) {
         const answerValue = data["option_" + option];
         answerContainer.children[index].innerHTML = `<input type="radio" name="question" value="${answerValue}"> ${answerValue}`;
     });
+}
+
+function loadImages(clue_url) {
+    imageTag.src = clue_url
+    imageTag.hidden = true
 }
 
 function startTimer() {
@@ -145,4 +154,8 @@ async function resetPoints() {
     } catch (e) {
         console.log(e);
     }
+}
+
+function displayImageTag(){
+    imageTag.hidden = false
 }
