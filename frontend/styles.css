@@ -13,6 +13,18 @@
      padding: 0;
      text-shadow: 2px 2px 4px rgba(75, 73, 73, 0.3);
    }
+
+   html, body {
+    overflow: hidden; /* This will remove both vertical and horizontal scrolling */
+    height: 100%; /* Ensure the body fills the height of the viewport */
+  }
+  
+   html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+  }
    
    body {
      background-image: url('./assests/background.jpg');
@@ -37,8 +49,11 @@
      background-color: rgba(47, 53, 53, 0.712);
      padding: 10px;
      border-radius: 15px;
+     font-family: "Lexend Deca", sans-serif;
+     margin-bottom: 300px;
    }
-   
+
+
    /* ==========================================================================
       Typography
       ========================================================================== */
@@ -88,6 +103,7 @@
     color: white;
     text-decoration: none;
   }
+
   
   /* footer */
 
@@ -100,5 +116,5 @@
     position: absolute; 
     bottom: 0;
     left: 0;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
 }
