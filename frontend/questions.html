@@ -52,15 +52,21 @@
             <div id="question-container">
                 <p id="question" class="delius-regular">What is...</p>
             </div>
-        </section>
+        </section>  
         <section id="answers-section">
             <h2 class="delius-regular">Answer</h2>
-            <div id="answer-container">
+            <div id="answer-container" class="list-group">
+                <button type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(0)"></button>
+                <button type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(1)"></button>
+                <button type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(2)"></button>
+                <button type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(3)"></button>
+              </div>
+            <!-- <div id="answer-container">
                 <label class="delius-regular"><input type="radio" name="question1" value="answer1" aria-label="Answer 1"></label>
                 <label class="delius-regular"><input type="radio" name="question2" value="answer2" aria-label="Answer 2"></label>
                 <label class="delius-regular"><input type="radio" name="question3" value="answer3" aria-label="Answer 3"></label>
                 <label class="delius-regular"><input type="radio" name="question4" value="answer4" aria-label="Answer 4"></label>
-            </div>
+            </div> -->
         </section>
     </div>
     <div id="buttons-section">
