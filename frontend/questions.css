@@ -188,7 +188,12 @@
    }
    
    #review-h1 {
-     margin-top: 10vh;
+      font-size: larger;
+     color: #FFF;
+   }
+
+   #link-btn {
+    background-color: #F79256;
    }
    
    #back-to-mistery {
@@ -272,7 +277,7 @@
     color: white; /* White text */
     text-align: center; /* Center text */
     padding: 5px 0; /* Adds top & bottom spacing */
-    position: absolute; /* Sticks to bottom */
+    position: fixed; /* Sticks to bottom */
     bottom: 0;
     left: 0;
     font-size: 1rem;
