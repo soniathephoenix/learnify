@@ -27,7 +27,7 @@
    body {
      max-width: 100vw;
      max-height: 100vh;;
-     background-image: url('./images/abstract-grunge-world-map-background_47840-1472.avif');
+     background-image: url('./assests/background.jpg');
      color: white;
      display: flex;
      flex-direction: column;
