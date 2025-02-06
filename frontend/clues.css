@@ -59,22 +59,16 @@ body {
 }
 
 #clues-images {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 15px;
-  justify-content: center;
   align-items: center;
-  padding: 20px;
-  max-width: 700px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .clue-img {
-  width: 100%;
   max-width: 180px;
-  height: auto;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  
 }
 
 
@@ -97,7 +91,7 @@ body {
 }
 
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #clues-images {
     grid-template-columns: repeat(2, 1fr); 
   }
@@ -107,10 +101,14 @@ body {
   #clues-images {
     grid-template-columns: repeat(1, 1fr); 
   }
-}
+} */
 
 .delius-regular {
   font-family: "Delius", serif;
   font-weight: 400;
   font-style: normal;
+  color: white;
+  font-weight: bold;
+  margin-top: 10vh;
 }
+
