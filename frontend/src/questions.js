@@ -62,7 +62,8 @@ function loadAnswers(data) {
     const options = ["a", "b", "c", "d"];
     options.forEach((option, index) => {
         const answerValue = data["option_" + option];
-        answerContainer.children[index].innerHTML = `<input type="radio" name="question" value="${answerValue}"> ${answerValue}`;
+        answerContainer.children[index].value= answerValue
+        answerContainer.children[index].innerHTML = `${option.toUpperCase()}: ${answerValue}`
     });
 }
 
@@ -87,15 +88,21 @@ function startTimer() {
     }, 1000);
 }
 
+function submit(option) {
+    document.querySelector('button.active')?.classList.toggle('active')
+    answerContainer.children[option].classList.toggle('active')
+
+}
+
 async function handleNext() {
     if (isProcessing) return;  
 
-    const selectedOption = document.querySelector('input[name="question"]:checked');  
+    const selectedOption = document.querySelector('button.active') 
     if (!selectedOption) {
         console.log("No selection");
         return;
     }
-
+    selectedOption.classList.toggle('active')
     selectedAnswer = selectedOption.value;
     console.log("Clicked on:", selectedAnswer);
     console.log("Right answ:", correctAnswer);
