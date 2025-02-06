@@ -54,15 +54,16 @@
    
    /* General container spacing */
    #level {
-     margin-top: 5vh;
+     margin-top: 3vh;
    }
    
    /* Question & Answer Layout */
    #question-and-answer {
      display: flex;
      justify-content: center;
-     gap: 10vw;
-     margin: 0 5vw; /* shorthand for left/right margins */
+     /* gap: 10vw;
+     margin: 0 5vw;  */
+     /* shorthand for left/right margins */
      padding-top: 5vh;
    }
    
@@ -79,27 +80,30 @@
    }
    
    /* Question & Answer Containers */
-   /* #question-container,
-   #answer-container {
-     border-radius: 5px;
-     min-width: 30vw;
-     max-width: 30vw;
-     height: 40vh;
-   } */
-   
-   #question-container {
-     background-color: #7DCFB6 !important;
-     color: white;
-     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-   }
-   
-   /* #answer-container {
-     display: flex;
-     flex-direction: column;
-     background-color: #FBD1A2;
-     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-   } */
-   
+    #question-container {
+      background-color: rgba(47, 53, 53, 0.712);
+      padding: 10px;
+      border-radius: 15px;
+      min-width: 30vw;
+      max-width: 30vw;
+      height: 50vh;
+      margin-right: 3vw;
+      
+    }
+
+    #div-answer-container {
+      background-color: rgba(47, 53, 53, 0.712);
+      padding: 10px;
+      border-radius: 15px;
+      min-width: 30vw;
+      max-width: 30vw;
+      height: 50vh;
+      margin-left: 3vw;
+    }
+
+
+
+
    
    /* ==========================================================================
       Buttons
@@ -107,7 +111,7 @@
    
    /* Merged #clue-btn properties */
    #clue-btn {
-     background-color: #F79256;
+     background-color: #0168D9;
      border: none;
      border-radius: 5px;
      color: white;
@@ -117,8 +121,20 @@
      margin-left: 30vw;
      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
    }
+
+    #next-button {
+      background-color: #28A745;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      width: 10vw;
+      height: 5vh;
+      font-size: 17px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+    }
    
-   #mistery-submit {
+   #mystery-submit {
      background-color: #F79256;
      border: none;
      border-radius: 5px;
@@ -131,12 +147,45 @@
    #next {
     cursor: pointer;
    }
+
+    #option1,
+    #option2,
+    #option3,
+    #option4 {
+      height:10vh;
+      background-color: rgba(47, 53, 53, 0.712);
+      color: white;
+
+    }
+
+    #option1:hover,
+    #option2:hover,
+    #option3:hover,
+    #option4:hover {
+      background-color: rgba(131, 128, 128, 0.712);
+      color: white;
+
+    }
+
+    #option1:active,
+    #option2:active,
+    #option3:active,
+    #option4:active {
+      height:10vh;
+      background-color: rgba(131, 128, 128, 0.712);
+      border-color: #FFF;
+      color: white;
+
+    }
+
+
+
    
    /* ==========================================================================
       Text & Form Elements
       ========================================================================== */
    #question {
-     color: #1D4E89;
+     color: white;;
      font-weight: bold;
      padding: 3vh 3vw;
      font-size: 2rem;
@@ -152,23 +201,25 @@
    #questions-section,
    h1,
    #answers-section h2 {
-     color: #1D4E89;
+     color: white;
    }
    
    
    /* ==========================================================================
       Mystery Section
       ========================================================================== */
-   #mistery-title {
+   #mystery-title {
+     color: #FFF;
      margin-top: 20vh;
    }
    
-   #mistery-question {
+   #mystery-question {
+     color:#FFF;
      margin-top: 10vh;
      margin-bottom: 3vh;
    }
    
-   #mistery-answer {
+   #mystery-answer {
      background-color: #FBD1A2;
      margin-bottom: 3vh;
      border: none;
@@ -190,16 +241,26 @@
       Additional Sections
       ========================================================================== */
    #congratulations-text {
-     margin-top: 40vh;
+     margin-top: 20vh;
      margin-bottom: 5vh;
+     font-size: xxx-large;
    }
    
    #question-section {
      max-width: 20vw;
    }
+
+   #solved-text {
+    margin-bottom: 20vh;
+   }
    
    #review-h1 {
-     margin-top: 10vh;
+      font-size: larger;
+     color: #FFF;
+   }
+
+   #link-btn {
+    background-color: #F79256;
    }
    
    #back-to-mistery {
@@ -246,6 +307,11 @@
     color: white;
   }
 
+  #answer-h1 {
+    text-align: center;
+    color: white;
+   }
+
 /* new navbar */
 
 .navbar {
@@ -259,8 +325,13 @@
   color: white;
 }
 
+#log-out{
+  color: white;
+}
+
 .navbar-brand {
   margin-right: 20px; /* Ensures "Learnify" stays on the left */
+  color: white;
 }
 
 .navbar-nav {
@@ -283,7 +354,7 @@
     color: white; /* White text */
     text-align: center; /* Center text */
     padding: 5px 0; /* Adds top & bottom spacing */
-    position: absolute; /* Sticks to bottom */
+    position: fixed; /* Sticks to bottom */
     bottom: 0;
     left: 0;
     font-size: 1rem;

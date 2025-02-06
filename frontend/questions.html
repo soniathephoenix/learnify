@@ -48,48 +48,48 @@
 
       <!-- main -->
     <section id="level">
-        <h1 class="delius-regular">Level 1</h1>
+        <h1>Level 1</h1>
     </section>
     
     <div id="question-and-answer">
         <section id="questions-section">
-            <div id= "question-container-bs" class="card text-bg-primary mb-3" style="max-width: 18rem;">
-                <div class="card-header">Question</div>
-                <div class="card-body">
-                    <p id="question" class="delius-regular">What is...</p>
+        <div class="container-fluid d-flex align-items-center justify-content-center" id="frontPageDiv">
+            <div>
+                <div id="question-container" class="text-center">
+                    <h1 id="heading1">Question</h1>
+                    <form id="login-form">
+                        <div class="form-group">
+                            <p id="question">What is...</p>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </section>
-
-        <!-- <section id="questions-section">
-            <h2 class="delius-regular">Question</h2>
-            <div id="question-container">
-                <p id="question" class="delius-regular">What is...</p>
-            </div>
-        </section> -->
-
+        </section> 
 
         <section id="answers-section">
-            <div id="answer-container-bs" class="card text-bg-primary mb-3" style="max-width: 18rem;">
-            <div class="card-header">Answer</div>
-            <div class="card-body">
-                <div id = "answer-container"> 
-                    <label class="delius-regular"><input type="radio" name="question1" value="answer1" aria-label="Answer 1"></label>
-                    <label class="delius-regular"><input type="radio" name="question2" value="answer2" aria-label="Answer 2"></label>
-                    <label class="delius-regular"><input type="radio" name="question3" value="answer3" aria-label="Answer 3"></label>
-                    <label class="delius-regular"><input type="radio" name="question4" value="answer4" aria-label="Answer 4"></label> 
-                </div> 
-                </div>
 
-            </div>
-            </div>
-            </div>
+            <div class="container-fluid d-flex align-items-center justify-content-center" id="frontPageDiv">
+                <div>
+                    <div id="div-answer-container">
+                        <h1 id="answer-h1">Answer</h1>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <div id="answer-container">
+                                    <button id="option1" type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(0)"></button>
+                                    <button id="option2" type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(1)"></button>
+                                    <button id="option3" type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(2)"></button>
+                                    <button id="option4" type="button" class="list-group-item list-group-item-action delius-regular" onclick="submit(3)"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
         </section>
     </div>
     <div id="buttons-section">
         <section id="inner-buttons-section">
-            <button id="clue-btn" class="delius-regular">Clue for mystery</button>
-            <a id="next" class="delius-regular">Next →</a>
+            <button id="clue-btn">Clue for mystery</button>
+            <button id="next-button"><a id="next">Next →</a></button>
         </section>
     </div>
     <img id="clue-image" alt="Clue image describing the mystery">
