@@ -263,3 +263,17 @@
   color: white;
   text-decoration: none;
 }
+
+  /* footer */
+
+  .footer {
+    width: 100%; /* Full width */
+    background-color: #333; /* Dark background like navbar */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 5px 0; /* Adds top & bottom spacing */
+    position: absolute; /* Sticks to bottom */
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
+}
