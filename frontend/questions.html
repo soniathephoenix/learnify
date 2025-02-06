@@ -15,24 +15,38 @@
     <title>Questions</title>
 </head>
 <body>
-
+    <!-- navbar -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container-fluid"> 
+            <!-- Learnify (Left) -->
+            <a class="navbar-brand" href="frontPage.html">Learnify</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <!-- Login, Register and Logout (Right) -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="login.html">Log out</a>
+                    </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <button class="btn btn-outline-success" type="submit">Logout</button>
-                </form>
             </div>
         </div>
     </nav>
+    
+    
 
+      <!-- main -->
     <section id="level">
         <h1 class="delius-regular">Level 1</h1>
     </section>
@@ -79,5 +93,9 @@
         </section>
     </div>
     <img id="clue-image" alt="Clue image describing the mystery">
+    <footer class="footer">
+        <p>© 2025 Learnify. All rights reserved.</p>
+    </footer>
+    
 </body>
 </html>

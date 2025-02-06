@@ -28,11 +28,14 @@
    
    body {
      max-width: 100vw;
-     background-color: #00B2CA !important;
+     max-height: 100vh;;
+     background-image: url('./images/abstract-grunge-world-map-background_47840-1472.avif');
      color: white;
      display: flex;
      flex-direction: column;
      align-items: center;
+     background-size: cover;
+     background-repeat: no-repeat;
    }
 
    html,
@@ -243,6 +246,48 @@
     color: white;
   }
 
+/* new navbar */
+
+.navbar {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  justify-content: space-between; /* Pushes left & right elements apart */
+  align-items: center; /* Centers items vertically */
+  padding: 15px 20px; /* Adds spacing */
+  background-color: #333; /* Optional: Navbar background color */
+  color: white;
+}
+
+.navbar-brand {
+  margin-right: 20px; /* Ensures "Learnify" stays on the left */
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 15px; /* Adds space between login and register */
+  margin-left: auto; /* Pushes Login & Register to the far right */
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
+
+  /* footer */
+
+  .footer {
+    width: 100%; /* Full width */
+    background-color: #333; /* Dark background like navbar */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 5px 0; /* Adds top & bottom spacing */
+    position: absolute; /* Sticks to bottom */
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
+}
   /* resize radio button */
   /* .form-check-input {
     transform: scale(0.7);
