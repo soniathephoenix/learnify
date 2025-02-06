@@ -45,23 +45,10 @@
    
    /* Navbar Branding */
    .navbar-brand { 
-     font-weight: 500;
-     font-family: "Pacifico", serif;
-     font-style: normal;
+    font-family: "Delius", serif;
+    font-weight: 400;
+    font-style: normal;
      font-size: 1.5rem;
-   }
-   
-   /* Custom Font Classes */
-   .delius-regular {
-     font-family: "Delius", serif;
-     font-weight: 400;
-     font-style: normal;
-   }
-   
-   .pacific-font {
-     font-family: "Pacifico", serif;
-     font-weight: 400;
-     font-style: normal;
    }
    
    /* Form Buttons & Controls */
