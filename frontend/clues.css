@@ -10,10 +10,6 @@
   text-shadow: 2px 2px 4px rgba(75, 73, 73, 0.3);
 }
 
-html, body {
-  overflow: hidden; 
-  height: 100%;
-}
 
 body {
   background-image: url('./assests/background.jpg');
@@ -22,40 +18,6 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 60px; 
-}
-
-.navbar {
-  display: flex;
-  width: 100vw;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background-color: #333;
-  color: white;
-}
-
-.navbar-brand {
-  margin-right: 20px;
-  color: white !important;
-  font-family: "Delius", serif;
-  font-size: 1.5rem;
-}
-
-.navbar-nav {
-  display: flex;
-  gap: 15px;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
 }
 
 #clues-images {
@@ -65,7 +27,8 @@ body {
 }
 
 .clue-img {
-  max-width: 180px;
+  width: 180px;
+  height: 160px;
   border-radius: 10px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
   
@@ -75,7 +38,7 @@ body {
 #link-btn {
   margin-top: 20px;
   position: relative;
-  z-index: 10;
+  background-color: #F79256;;
 }
 
 .footer {
