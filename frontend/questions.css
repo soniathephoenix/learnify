@@ -181,12 +181,17 @@
       Additional Sections
       ========================================================================== */
    #congratulations-text {
-     margin-top: 40vh;
+     margin-top: 20vh;
      margin-bottom: 5vh;
+     font-size: xxx-large;
    }
    
    #question-section {
      max-width: 20vw;
+   }
+
+   #solved-text {
+    margin-bottom: 20vh;
    }
    
    #review-h1 {
