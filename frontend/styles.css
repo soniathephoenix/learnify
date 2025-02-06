@@ -84,6 +84,7 @@
     padding: 15px 20px; /* Adds spacing */
     background-color: #333; /* Optional: Navbar background color */
     color: white;
+    margin-bottom: 55vh;
   }
   
   .navbar-brand {
@@ -117,4 +118,13 @@
     bottom: 0;
     left: 0;
     font-size: 0.8rem;
+}
+
+.container-fluid {
+
+  max-height: 10vh;
+}
+
+#mystery-submit{
+  margin-bottom: 25vh;
 }
