@@ -108,3 +108,9 @@ body {
     grid-template-columns: repeat(1, 1fr); 
   }
 }
+
+.delius-regular {
+  font-family: "Delius", serif;
+  font-weight: 400;
+  font-style: normal;
+}
