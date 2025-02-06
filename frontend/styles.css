@@ -60,3 +60,32 @@
      font-style: normal;
    }
    
+
+   /* new navbar */
+
+   .navbar {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between; /* Pushes left & right elements apart */
+    align-items: center; /* Centers items vertically */
+    padding: 15px 20px; /* Adds spacing */
+    background-color: #333; /* Optional: Navbar background color */
+    color: white;
+  }
+  
+  .navbar-brand {
+    margin-right: 20px; /* Ensures "Learnify" stays on the left */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 15px; /* Adds space between login and register */
+    margin-left: auto; /* Pushes Login & Register to the far right */
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
