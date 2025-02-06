@@ -1,5 +1,4 @@
-document.getElementById("login-form").addEventListener("submit", login)
-const login = async () => {
+document.getElementById("login-form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
@@ -25,11 +24,9 @@ const login = async () => {
     } else {
         alert(data.error);
     }
-}
+});
 
 
 document.getElementById("registerBtn").addEventListener("click", () => {
     window.location.href = "registerPage.html";
 });
-
-module.exports = login
