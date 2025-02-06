@@ -1,32 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* ==========================================================================
+   Font Imports
+   ========================================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Deca:wght@100..900&family=Pacifico&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Delius&family=Great+Vibes&family=Lexend+Deca:wght@100..900&family=Pacifico&display=swap');
+   
+   /* ==========================================================================
+      Global Reset & Base Styles
+      ========================================================================== */
+   * {
+     margin: 0;
+     padding: 0;
+     text-shadow: 2px 2px 4px rgba(75, 73, 73, 0.3);
+   }
+   
+   body {
+     background-image: url('./assests/background.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-attachment: fixed;
+     color: white;
+   }
+   
+   /* ==========================================================================
+      Utility Classes
+      ========================================================================== */
+   .empty-space {
+     padding: 75px;
+   }
+   
+   /* ==========================================================================
+      Layout / Component Styles
+      ========================================================================== */
+   #textContainer {
+     background-color: rgba(47, 53, 53, 0.712);
+     padding: 10px;
+     border-radius: 15px;
+   }
+   
+   /* ==========================================================================
+      Typography
+      ========================================================================== */
+   
+   /* Navbar Branding */
+   .navbar-brand { 
+    font-family: "Delius", serif;
+    font-weight: 400;
+    font-style: normal;
+     font-size: 1.5rem;
+   }
+   
+   /* Form Buttons & Controls */
+   .btn,
+   .btnInfo,
+   .form-control {
+     font-family: "Delius", serif;
+     font-weight: bold;
+     font-style: normal;
+   }
+   
 
-* {
-    margin: 0;
-    padding: 0;
-    text-shadow: 2px 2px 4px rgba(75, 73, 73, 0.3);
-}
+   /* new navbar */
 
-body {
-    background-image: url('./assests/background.jpg');
-    background-size: cover; /* Ensures the image fills the entire screen */
-    background-repeat: no-repeat; /* Prevents repetition */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Optional: Keeps it fixed while scrolling */
+   .navbar {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between; /* Pushes left & right elements apart */
+    align-items: center; /* Centers items vertically */
+    padding: 15px 20px; /* Adds spacing */
+    background-color: #333; /* Optional: Navbar background color */
     color: white;
-}
+  }
+  
+  .navbar-brand {
+    margin-right: 20px; /* Ensures "Learnify" stays on the left */
+  }
+  
+  .navbar-nav {
+    display: flex;
+    gap: 15px; /* Adds space between login and register */
+    margin-left: auto; /* Pushes Login & Register to the far right */
+    margin-right: 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* footer */
 
-.empty-space{
-    padding: 75px;
-}
-
-
-#textContainer {
-    background-color: rgba(47, 53, 53, 0.712);
-    padding: 10px;
-    border-radius: 15px;
-}
-
-.navbar-brand{ 
-    /* styling for Learnify in navbar */
-    font-weight: 500;
+  .footer {
+    width: 100%;
+    background-color: #333; 
+    color: white; 
+    text-align: center; 
+    padding: 5px 0; 
+    position: absolute; 
+    bottom: 0;
+    left: 0;
+    font-size: 0.5rem;
 }

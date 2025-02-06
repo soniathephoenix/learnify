@@ -1,66 +1,284 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ==========================================================================
+   Import Fonts
+   ========================================================================== */
+   @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lexend+Deca:wght@100..900&family=Pacifico&display=swap');
 
-body {
-    max-width: 100vw;
-    overflow-x: hidden;
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('./assests/background.jpg');
-    color: white;
-    background-size: cover;
-    background-position: center;
-    overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   @import url('https://fonts.googleapis.com/css2?family=Delius&family=Great+Vibes&family=Lexend+Deca:wght@100..900&family=Pacifico&display=swap');
+
+#timer {
+    font-size: 2rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
 }
 
 
-#question-container {
-    background-color: #7DCFB6;
-    color: white;
-    min-width: 30vw;
-    max-width: 50vw;
-    height: 40vh;
-}
+   /* ==========================================================================
+      Reset & Global Styles
+      ========================================================================== */
+   * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+   }
+   
+   body {
+     max-width: 100vw;
+     max-height: 100vh;;
+     background-image: url('./images/abstract-grunge-world-map-background_47840-1472.avif');
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+   }
+   
+   
+   /* ==========================================================================
+      Layout Containers & Sections
+      ========================================================================== */
+   
+   /* General container spacing */
+   #level {
+     margin-top: 5vh;
+   }
+   
+   /* Question & Answer Layout */
+   #question-and-answer {
+     display: flex;
+     justify-content: center;
+     gap: 10vw;
+     margin: 0 5vw; /* shorthand for left/right margins */
+     padding-top: 5vh;
+   }
+   
+   #buttons-section {
+     margin-top: 2vh;
+     width: 70vw;
+   }
+   
+   #inner-buttons-section {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     color: #FFF;
+   }
+   
+   /* Question & Answer Containers */
+   #question-container,
+   #answer-container {
+     border-radius: 5px;
+     min-width: 30vw;
+     max-width: 30vw;
+     height: 40vh;
+   }
+   
+   #question-container {
+     background-color: #7DCFB6;
+     color: white;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   #answer-container {
+     display: flex;
+     flex-direction: column;
+     background-color: #FBD1A2;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   
+   /* ==========================================================================
+      Buttons
+      ========================================================================== */
+   
+   /* Merged #clue-btn properties */
+   #clue-btn {
+     background-color: #F79256;
+     border: none;
+     border-radius: 5px;
+     color: white;
+     width: 10vw;
+     height: 5vh;
+     font-size: 17px;
+     margin-left: 30vw;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   #mistery-submit {
+     background-color: #F79256;
+     border: none;
+     border-radius: 5px;
+     color: white;
+     cursor: pointer;
+     font-size: 15px;
+     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+   
+   #next {
+    cursor: pointer;
+   }
+   
+   /* ==========================================================================
+      Text & Form Elements
+      ========================================================================== */
+   #question {
+     color: #1D4E89;
+     font-weight: bold;
+     padding: 3vh 3vw;
+     font-size: 2rem;
+   }
+   
+   label,
+   input {
+     color: #1D4E89;
+     font-weight: bold;
+     padding: 3vh 3vw;
+   }
+   
+   #questions-section,
+   h1,
+   #answers-section h2 {
+     color: #1D4E89;
+   }
+   
+   
+   /* ==========================================================================
+      Mystery Section
+      ========================================================================== */
+   #mistery-title {
+     margin-top: 20vh;
+   }
+   
+   #mistery-question {
+     margin-top: 10vh;
+     margin-bottom: 3vh;
+   }
+   
+   #mistery-answer {
+     background-color: #FBD1A2;
+     margin-bottom: 3vh;
+     border: none;
+     border-radius: 5px;
+     font-size: 1rem;
+     box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
+    
+   }
 
-#answer-container {
-    display: flex;
-    flex-direction: column;
-    background-color: #FBD1A2;
-    min-width: 30vw;
-    max-width: 50vw;
-    height: 40vh;
-    /* margin-right:5vw; */
-}
+   #clue-image {
+    margin-top: 3vh;
+  }
+   
+  .clue-img {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+   
+   /* ==========================================================================
+      Additional Sections
+      ========================================================================== */
+   #congratulations-text {
+     margin-top: 40vh;
+     margin-bottom: 5vh;
+   }
+   
+   #question-section {
+     max-width: 20vw;
+   }
+   
+   #review-h1 {
+      font-size: larger;
+     color: #FFF;
+   }
 
-#clue-btn {
+   #link-btn {
     background-color: #F79256;
+   }
+   
+   #back-to-mistery {
+     color: #1D4E89;
+     text-decoration: underline;
+     font-weight: bold;
+   }
+   
+   
+   /* ==========================================================================
+      Image Rows
+      ========================================================================== */
+   .row {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 10px;
+   }
+   
+   .row img {
+     width: 18vw;
+     height: 25vh;
+     margin: 3vh;
+     border-radius: 5px;
+   }
+   
+   
+   /* ==========================================================================
+      Typography
+      ========================================================================== */
+   .pacific-font {
+     font-family: "Pacifico", serif;
+     font-weight: 400;
+     font-style: normal;
+     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+   }
+
+   .delius-regular {
+    font-family: "Delius", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+   
+   #level h1 {
+    color: white;
+  }
+
+/* new navbar */
+
+.navbar {
+  display: flex;
+  width: 100vw;
+  height: 10vh;
+  justify-content: space-between; /* Pushes left & right elements apart */
+  align-items: center; /* Centers items vertically */
+  padding: 15px 20px; /* Adds spacing */
+  background-color: #333; /* Optional: Navbar background color */
+  color: white;
 }
 
-#question-and-answer {
-    display: flex;
-    justify-content: center;
-    gap: 10vw;
-    margin-left:5vw;
-    margin-right: 5vw;
-    padding-top:5vh;
+.navbar-brand {
+  margin-right: 20px; /* Ensures "Learnify" stays on the left */
 }
 
-#buttons-section {
-    margin-top: 2vh;
-    width: 70vw;
+.navbar-nav {
+  display: flex;
+  gap: 15px; /* Adds space between login and register */
+  margin-left: auto; /* Pushes Login & Register to the far right */
+  margin-right: 20px;
 }
 
-#inner-buttons-section {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    color: #FFF;
+.nav-link {
+  color: white;
+  text-decoration: none;
+}
 
+  /* footer */
+
+  .footer {
+    width: 100%; /* Full width */
+    background-color: #333; /* Dark background like navbar */
+    color: white; /* White text */
+    text-align: center; /* Center text */
+    padding: 5px 0; /* Adds top & bottom spacing */
+    position: fixed; /* Sticks to bottom */
+    bottom: 0;
+    left: 0;
+    font-size: 1rem;
 }
