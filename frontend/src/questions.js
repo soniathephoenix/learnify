@@ -164,7 +164,12 @@ async function resetPoints() {
 }
 
 function displayImageTag(){
-    openModal()
+    selectedOption.classList.toggle('active')
+    selectedAnswer = selectedOption?.value;
+
+    if (selectedAnswer === correctAnswer) {
+          openModal()
+    }
 }
 
 
